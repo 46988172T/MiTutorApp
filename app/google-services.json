@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "584654318976",
+    "firebase_url": "https://mitutor-a6cb6.firebaseio.com",
+    "project_id": "mitutor-a6cb6",
+    "storage_bucket": "mitutor-a6cb6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584654318976:android:b043d516e31a9fee",
+        "android_client_info": {
+          "package_name": "com.mitutor.mitutorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "584654318976-9pbr2te9rcrok4h5ip4t02auko6jhqqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzh33TBDwOl8U7p9d7P1u7cACqbt2A5lM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
