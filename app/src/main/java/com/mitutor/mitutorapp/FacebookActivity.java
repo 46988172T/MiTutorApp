@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Base64;
@@ -27,6 +28,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
 
 public class FacebookActivity extends Activity {
     private static final String TAG = "";
@@ -64,18 +66,8 @@ public class FacebookActivity extends Activity {
         mLoginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                handleFacebookAccessToken(loginResult.getAccessToken());
-                String userLoginId = loginResult.getAccessToken().getUserId();
+                handleFacebookAccessToken(loginResult.getAccessToken()); // pasamos el token para que se autentique con Firebase y cree el nuevo usuario
                 Intent facebookIntent = new Intent(FacebookActivity.this, MainActivity.class);
-                    /*Profile mProfile = Profile.getCurrentProfile();
-                    String firstName = mProfile.getFirstName();
-                    String lastName = mProfile.getLastName();
-                    String userId = mProfile.getId().toString();
-                    String profileImageUrl = mProfile.getProfilePictureUri(96, 96).toString();
-                    facebookIntent.putExtra(PROFILE_USER_ID, userId);
-                    facebookIntent.putExtra(PROFILE_FIRST_NAME, firstName);
-                    facebookIntent.putExtra(PROFILE_LAST_NAME, lastName);
-                    facebookIntent.putExtra(PROFILE_IMAGE_URL, profileImageUrl);*/
                 startActivity(facebookIntent);
             }
 
